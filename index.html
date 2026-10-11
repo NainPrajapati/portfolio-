@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nain Prajapati – Java Developer</title>
+<meta name="description" content="Portfolio of Nain Haresh Prajapati, Java and Spring Boot developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F6F9;--surface:#FFFFFF;--ink:#0F1B2D;--muted:#566579;--line:#D9E0E8;
+  --accent:#1F5EFF;--ok:#0B8A6F;--panel:#0F1B2D;--panel-ink:#DCE6F5;--panel-key:#8FB4FF;--panel-str:#7FE0C2;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--body:'Inter','Segoe UI',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1220;--surface:#121B2D;--ink:#EAF0F8;--muted:#9AA9BC;--line:#243249;--accent:#6D9BFF;--ok:#4FD1B0;--panel:#070D18;
+}}
+:root[data-theme="dark"]{
+  --bg:#0B1220;--surface:#121B2D;--ink:#EAF0F8;--muted:#9AA9BC;--line:#243249;--accent:#6D9BFF;--ok:#4FD1B0;--panel:#070D18;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font:700 18px var(--display);text-decoration:none}
+nav{display:flex;gap:20px;font-size:14px}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+@media(max-width:560px){nav a:nth-child(n+4){display:none}}
+.hero{padding:72px 0 56px;display:grid;gap:40px;grid-template-columns:1.1fr .9fr;align-items:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:48px}}
+h1{font:700 clamp(36px,6vw,60px)/1.05 var(--display);letter-spacing:-.02em;margin:0 0 20px}
+.lead{font-size:18px;color:var(--muted);max-width:52ch;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:500;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{filter:brightness(1.06)}
+.api{background:var(--panel);color:var(--panel-ink);border-radius:14px;font:400 13.5px/1.7 var(--mono);overflow:hidden;box-shadow:0 20px 50px -20px rgba(15,27,45,.45)}
+.api .bar{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+.api .ok{color:var(--panel-str)}
+.api pre{margin:0;padding:16px 18px 20px;overflow-x:auto;white-space:pre}
+.api .k{color:var(--panel-key)}.api .s{color:var(--panel-str)}
+.api pre span.l{display:block;opacity:0;animation:in .35s forwards;animation-delay:calc(var(--i)*70ms + .2s)}
+@keyframes in{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.api pre span.l{opacity:1;animation:none}html{scroll-behavior:auto}}
+section.block{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:48px 0;border-top:1px solid var(--line)}
+@media(max-width:760px){section.block{grid-template-columns:1fr;gap:16px}}
+h2{font:700 24px var(--display);margin:0;letter-spacing:-.01em}
+.item+.item{margin-top:32px}
+.item h3{font:700 19px var(--display);margin:0}
+.meta{color:var(--muted);font-size:14px;margin:2px 0 12px}
+ul.pts{margin:0;padding-left:18px}ul.pts li{margin:6px 0;max-width:68ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{font:500 12.5px var(--mono);padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+dl.skills{margin:0;display:grid;grid-template-columns:150px 1fr;gap:12px 20px}
+dl.skills dt{color:var(--muted);font-size:14px}dl.skills dd{margin:0}
+@media(max-width:560px){dl.skills{grid-template-columns:1fr;gap:2px}dl.skills dd{margin-bottom:12px}}
+.contact a.row{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.contact a.row span:first-child{color:var(--muted)}.contact a.row:hover span:last-child{color:var(--accent)}
+footer{padding:32px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top">Nain Prajapati</a>
+  <nav aria-label="Sections"><a href="#experience">Experience</a><a href="#project">Project</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top" class="wrap">
+  <section class="hero">
+    <div>
+      <h1>I build the backend services behind insurance software.</h1>
+      <p class="lead" id="lead"></p>
+      <div class="btns" id="cta"></div>
+    </div>
+    <div class="api" aria-label="Profile summary shown as an API response">
+      <div class="bar"><span>GET /developers/nain-prajapati</span><span class="ok">200 OK</span></div>
+      <pre id="json"></pre>
+    </div>
+  </section>
+  <div id="sections"></div>
+</main>
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>
+/* ---- All content lives here. To add a project, skill or job, edit this object only. ---- */
+const DATA = {
+  name: "Nain Haresh Prajapati",
+  role: "Java Developer",
+  location: "Daman, India",
+  summary: "Computer Science graduate (B.Sc., 2026) with six months of hands-on experience building REST APIs in Java and Spring Boot for a personal auto insurance platform. Looking for a Software Engineer or Java Developer role.",
+  links: { email: "nainprajapati589@gmail.com", linkedin: "https://www.linkedin.com/in/nain-prajapati", github: "https://github.com/NainPrajapati" },
+  api: { stack: ["Java", "Spring Boot", "PostgreSQL"], experience: "Java Developer Intern, 1Rivet India LLP", degree: "B.Sc. Computer Science, 2026", open_to_work: true },
+  experience: [{
+    title: "Java Developer Intern", org: "1Rivet India LLP, Valsad, Gujarat", when: "January 2026 – June 2026",
+    points: [
+      "Built and improved REST APIs with Java and Spring Boot for an insurance policy and coverage management application.",
+      "Wrote validation logic and business rules, and worked on API integrations.",
+      "Queried and managed data in relational databases with SQL.",
+      "Took part in debugging, testing and code reviews with senior developers in an Agile team.",
+      "Helped with deployments and resolved issues across development environments."
+    ]
+  }],
+  projects: [{
+    title: "Personal Auto Insurance System", when: "Backend development, 2026",
+    points: [
+      "Developed and maintained backend services for an insurance management platform.",
+      "Implemented RESTful APIs for policies, coverage, templates and customers.",
+      "Tested APIs with Postman and checked responses against business requirements.",
+      "Managed environment-specific configuration and supported deployments.",
+      "Contributed to documentation and sprint planning and review meetings."
+    ],
+    tags: ["Java", "Spring Boot", "JPA/Hibernate", "SQL", "REST", "Postman"]
+  }],
+  skills: [
+    ["Languages", "Java, Python, PHP, C, C++"],
+    ["Backend", "Spring Boot, REST APIs, JDBC, Spring Data JPA, Hibernate"],
+    ["Web", "HTML5, CSS3, JavaScript"],
+    ["Databases", "PostgreSQL, MySQL, MongoDB"],
+    ["Tools", "Git, GitHub, GitLab, Postman, Maven, Eclipse, IntelliJ IDEA, VS Code"],
+    ["Foundations", "OOP, Data Structures and Algorithms, DBMS, SDLC, Agile and Scrum"]
+  ],
+  education: [{
+    title: "B.Sc. in Computer Science", org: "Dolat Usha Institute of Applied Science and Dhiru Sarla Institute of Management and Commerce, Valsad (Veer Narmad South Gujarat University)", when: "2023 – 2026",
+    note: "Coursework: Data Structures and Algorithms, Database Management Systems, Object-Oriented Programming, Web Development, Software Engineering, Machine Learning, MEAN Stack, AI Fundamentals."
+  }]
+};
+
+const $ = (id) => document.getElementById(id);
+const li = (a) => a.map(t => `<li>${t}</li>`).join("");
+const item = (x, extra = "") => `<div class="item"><h3>${x.title}</h3><p class="meta">${[x.org, x.when].filter(Boolean).join(" · ")}</p>${extra}</div>`;
+const block = (id, title, html) => `<section class="block" id="${id}"><h2>${title}</h2><div>${html}</div></section>`;
+
+$("lead").textContent = DATA.summary;
+$("cta").innerHTML = `<a class="btn primary" data-mail href="mailto:${DATA.links.email}">Email me</a><a class="btn" href="${DATA.links.github}" target="_blank" rel="noopener">GitHub</a><a class="btn" href="${DATA.links.linkedin}" target="_blank" rel="noopener">LinkedIn</a>`;
+
+const j = { name: DATA.name, role: DATA.role, ...DATA.api, location: DATA.location };
+const lines = JSON.stringify(j, null, 2).split("\n").map(l =>
+  l.replace(/^(\s*)"([^"]+)":/, '$1<span class="k">"$2"</span>:').replace(/: "([^"]*)"/, ': <span class="s">"$1"</span>').replace(/^(\s+)"([^"]*)"(,?)$/, '$1<span class="s">"$2"</span>$3'));
+$("json").innerHTML = lines.map((l, i) => `<span class="l" style="--i:${i}">${l}</span>`).join("");
+
+$("sections").innerHTML =
+  block("experience", "Experience", DATA.experience.map(x => item(x, `<ul class="pts">${li(x.points)}</ul>`)).join("")) +
+  block("project", "Project", DATA.projects.map(x => item(x, `<ul class="pts">${li(x.points)}</ul><div class="tags">${x.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>`)).join("")) +
+  block("skills", "Skills", `<dl class="skills">${DATA.skills.map(s => `<dt>${s[0]}</dt><dd>${s[1]}</dd>`).join("")}</dl>`) +
+  block("education", "Education", DATA.education.map(x => item(x, `<p style="margin:0;max-width:68ch;color:var(--muted)">${x.note}</p>`)).join("")) +
+  block("contact", "Contact", `<div class="contact"><a class="row" data-mail href="mailto:${DATA.links.email}"><span>Email</span><span>${DATA.links.email}</span></a><a class="row" href="${DATA.links.linkedin}" target="_blank" rel="noopener"><span>LinkedIn</span><span>nain-prajapati</span></a><a class="row" href="${DATA.links.github}" target="_blank" rel="noopener"><span>GitHub</span><span>NainPrajapati</span></a></div>`);
+
+$("foot").textContent = `${DATA.name} · ${DATA.location}`;
+
+/* Email: Gmail app on phones, Gmail compose tab on computers. Address is also copied as a fallback. */
+document.querySelectorAll("[data-mail]").forEach(el => el.addEventListener("click", async (ev) => {
+  ev.preventDefault();
+  const to = DATA.links.email, ua = navigator.userAgent;
+  const ios = /iPhone|iPad|iPod/i.test(ua), android = /Android/i.test(ua);
+  try { await navigator.clipboard.writeText(to); } catch (e) {}
+  if (ios) {
+    location.href = "googlegmail:///co?to=" + to;
+    setTimeout(() => { if (!document.hidden) location.href = "mailto:" + to; }, 900);
+  } else if (android) {
+    location.href = "mailto:" + to;
+  } else {
+    const w = window.open("https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(to), "_blank", "noopener");
+    if (!w) location.href = "mailto:" + to;
+  }
+  const label = el.classList.contains("row") ? el.lastElementChild : el;
+  const old = label.dataset.old || label.textContent;
+  label.dataset.old = old;
+  label.textContent = "Email copied";
+  setTimeout(() => { label.textContent = old; }, 2200);
+}));
+</script>
+</body>
+</html>
